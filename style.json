@@ -1,0 +1,137 @@
+{
+    "hierarchy": {
+        ".baseTest": {
+            ".baseContainer": {
+                "style_class": "",
+                "type": "div",
+                "id": "container_test",
+                "subviews": [
+                    {
+                        ".baseHeader": {
+                            "style_class": ".footer",
+                            "type": "div",
+                            "id": "header_test",
+                            "subviews": [
+                                {
+                                    ".baseIcon": {
+                                        "style_class": ".header",
+                                        "type": "icon",
+                                        "id": "header_icon"
+                                    }
+                                },
+                                {
+                                    ".baseText.h1": {
+                                        "style_class": "testHeaderTitle",
+                                        "type": "text",
+                                        "id": "header_text"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        ".baseTable": {
+                            "style_class": ".footer",
+                            "type": "div",
+                            "id": "table_test",
+                            "subview": [
+                                {
+                                    "baseCell": {
+                                        "style_class": ".main",
+                                        "type": "div",
+                                        "id": "cell_test",
+                                        "subview": [
+                                            {
+                                                ".baseContainer": {
+                                                    "style_class": "testAvatarContainer",
+                                                    "type": "div",
+                                                    "id": "avatar_container",
+                                                    "subview": [
+                                                        {
+                                                            ".baseAvatar": {
+                                                                "style_class": "",
+                                                                "type": "img",
+                                                                "id": "test_avatar"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                ".baseContainer": {
+                                                    "style_class": "testMessageContainer",
+                                                    "type": "div",
+                                                    "id": "testMessageContainer",
+                                                    "subview": [
+                                                        {
+                                                            ".baseRow": {
+                                                                "style_class": "",
+                                                                "type": "div",
+                                                                "id": "textContainer",
+                                                                "subview": [
+                                                                    {
+                                                                        ".baseText.h3": {
+                                                                            "style_class": "testMessageName",
+                                                                            "type": "text",
+                                                                            "id": "nametext"
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        ".baseText.h3": {
+                                                                            "style_class": "testMessageDate",
+                                                                            "type": "text",
+                                                                            "id": "dateText"
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            ".baseRow": {
+                                                                "style_class": "",
+                                                                "type": "div",
+                                                                "id": "bodyRow",
+                                                                "subview": [
+                                                                    {
+                                                                        ".baseText.h3": {
+                                                                            "style_class": "testMessageBody",
+                                                                            "type": "text",
+                                                                            "id": "textBody"
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "style": {
+        "$coal20" : "rgb(20,20,20)",
+        "$coal80" : "rgb(80,80,80)",
+        ".header": {
+                "font-size": "20px",
+                "margin-top": "10px",
+                "background": "$coal20"
+        },
+         ".footer": {
+                "font-size": "20px",
+                "margin-left": "10px",
+                "background": "#000"
+        },
+         ".main": {
+                "font-size": "20px",
+                "margin-bottom": "10px",
+                "background": "$coal80"
+        }
+    }
+}

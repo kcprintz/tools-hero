@@ -1,0 +1,380 @@
+{
+  "hierarchy": {
+    ".baseTest": {
+      ".baseContainer": {
+        "style_class": "",
+        "type": "div",
+        "id": "container_test",
+        "subviews": [{
+          ".baseHeader": {
+            "style_class": "",
+            "type": "div",
+            "id": "header_test",
+            "subviews": [{
+              ".baseIcon": {
+                "style_class": "",
+                "type": "icon",
+                "id": "header_icon"
+              }
+            }, {
+              ".baseText.h1": {
+                "style_class": "testHeaderTitle",
+                "type": "text",
+                "id": "header_text"
+              }
+            }]
+          }
+        }, {
+          ".baseTable": {
+            "style_class": "",
+            "type": "div",
+            "id": "table_test",
+            "subview": [{
+              "baseCell": {
+                "style_class": "",
+                "type": "div",
+                "id": "cell_test",
+                "subview": [{
+                  ".baseContainer": {
+                    "style_class": "testAvatarContainer",
+                    "type": "div",
+                    "id": "avatar_container",
+                    "subview": [{
+                      ".baseAvatar": {
+                        "style_class": "",
+                        "type": "img",
+                        "id": "test_avatar"
+                      }
+                    }]
+                  }
+                }, {
+                  ".baseContainer": {
+                    "style_class": "testMessageContainer",
+                    "type": "div",
+                    "id": "testMessageContainer",
+                    "subview": [{
+                      ".baseRow": {
+                        "style_class": "",
+                        "type": "div",
+                        "id": "textContainer",
+                        "subview": [{
+                          ".baseText.h3": {
+                            "style_class": "testMessageName",
+                            "type": "text",
+                            "id": "nametext"
+                          }
+                        }, {
+                          ".baseText.h3": {
+                            "style_class": "testMessageDate",
+                            "type": "text",
+                            "id": "dateText"
+                          }
+                        }]
+                      }
+                    }, {
+                      ".baseRow": {
+                        "style_class": "",
+                        "type": "div",
+                        "id": "bodyRow",
+                        "subview": [{
+                          ".baseText.h3": {
+                            "style_class": "testMessageBody",
+                            "type": "text",
+                            "id": "textBody"
+                          }
+                        }]
+                      }
+                    }]
+
+                  }
+                }]
+
+              }
+            }]
+          }
+        }]
+      }
+    }
+  },
+  "style": {
+    "body": {
+      "background-color": "#000000",
+      "font-size": "16",
+      "font-family": "ProximaNova-Regular"
+    },
+    "ol": {
+      "margin-top": "0",
+      "margin-bottom": "10px",
+      "left": "0px",
+      "right": "0px",
+      "top": "0px",
+      "bottom": "0px",
+      "margin-left": "16"
+    },
+    "p": {
+      "left": "0px",
+      "right": "0px",
+      "margin-top": "0px",
+      "margin-bottom": "0px",
+      "box-sizing": "content-box",
+      "-webkit-margin-before": "0px",
+      "-webkit-margin-after": "0px",
+      "-webkit-margin-start": "0px",
+      "-webkit-margin-end": "0px",
+      "top": "0px",
+      "bottom": "0px"
+    },
+    "span": {
+      "left": "0px",
+      "right": "0px",
+      "top": "0px",
+      "bottom": "0px",
+      "box-sizing": "content-box"
+    },
+    ".coal10": {
+      "color": "#14161a"
+    },
+    ".coal20": {
+      "color": "#272c32"
+    },
+    ".coal40": {
+      "color": "#505a66"
+    },
+    ".coal70": {
+      "color": "#98a4b3"
+    },
+    ".blue95": {
+      "color": "#00b2f3"
+    },
+    ".red93": {
+      "color": "#ed174f"
+    },
+    ".green73": {
+      "color": "#4ab962"
+    },
+    ".pink94": {
+      "color": "#f03987"
+    },
+    ".gold100": {
+      "color": "#ffb515"
+    },
+    ".grey10": {
+      "color": "#1a1a1a"
+    },
+    ".grey20": {
+      "color": "#333333"
+    },
+    ".grey30": {
+      "color": "#4d4d4d"
+    },
+    ".grey40": {
+      "color": "#666666"
+    },
+    ".grey50": {
+      "color": "#7f7f7f"
+    },
+    ".grey60": {
+      "color": "#999999"
+    },
+    ".grey70": {
+      "color": "#b3b3b3"
+    },
+    ".grey80": {
+      "color": "#cccccc"
+    },
+    ".grey90": {
+      "color": "#e5e5e5"
+    },
+    ".grey95": {
+      "color": "#f2f2f2"
+    },
+    ".c40": {
+      "color": "rgba(80, 90, 102, 0.6)"
+    },
+    ".c20": {
+      "color": "rgba(39, 44, 50, 0.9)"
+    },
+    ".w70": {
+      "color": "rgba(255, 255, 255, 0.7)"
+    },
+    ".w60": {
+      "color": "rgba(255, 255, 255, 0.6)"
+    },
+    ".w40": {
+      "color": "rgba(255, 255, 255, 0.4)"
+    },
+    ".w50": {
+      "color": "rgba(255, 255, 255, 0.5)"
+    },
+    ".w20": {
+      "color": "rgba(255, 255, 255, 0.2)"
+    },
+    ".w30": {
+      "color": "rgba(255, 255, 255, 0.3)"
+    },
+    ".blacktrans": {
+      "color": "rgba(0, 0, 0, 0.6)"
+    },
+    ".channelOverlay": {
+      "color": "rgba(0, 0, 0, 0.05)"
+    },
+    ".b": {
+      "color": "#00b2f3"
+    },
+    ".g60": {
+      "color": "#999999"
+    },
+    ".g40": {
+      "color": "#666666"
+    },
+    ".g70": {
+      "color": "#b3b3b3"
+    },
+    ".g20": {
+      "color": "#333333"
+    },
+    ".h1": {
+      "font-family": "ProximaNova-Light",
+      "font-size": "24"
+    },
+    ".h2": {
+      "font-family": "ProximaNova-Regular",
+      "font-size": "18"
+    },
+    ".h3": {
+      "font-family": "ProximaNova-Regular",
+      "font-size": "16",
+      "color": "#7f7f7f",
+      "line-number": "0"
+    },
+    ".h3_alt": {
+      "font-family": "ProximaNova-Italic",
+      "font-size": "16",
+      "color": "#cccccc",
+      "font-style": "italic"
+    },
+    ".h4": {
+      "font-family": "ProximaNova-Bold",
+      "font-size": "16",
+      "color": "rgba(255, 255, 255, 0.7)",
+      "font-weight": "bold"
+    },
+    ".h5": {
+      "font-family": "ProximaNova-Italic",
+      "font-size": "13",
+      "font-weight": "normal",
+      "color": "#7f7f7f",
+      "font-style": "italic"
+    },
+    ".h6": {
+      "font-family": "ProximaNova-Regular",
+      "font-size": "13"
+    },
+    ".h7": {
+      "font-family": "ProximaNova-Bold",
+      "font-size": "13",
+      "font-weight": "normal",
+      "text-transform": "uppercase"
+    },
+    ".h8": {
+      "font-family": "ProximaNova-Regular",
+      "font-size": "11",
+      "font-weight": "normal",
+      "text-transform": "uppercase"
+    },
+    ".baseContainer": {
+      "start-column": "0",
+      "left": "0px",
+      "right": "0px",
+      "span": "12",
+      "height": "100%",
+      "background-color": "#b3b3b3"
+    },
+    ".baseAvatar": {
+      "width": "56px",
+      "height": "56px",
+      "border-radius": "28px",
+      "border-width": "2px",
+      "border-color": "#ffffff",
+      "border-style": "solid"
+    },
+    ".baseTable": {
+      "width": "100%",
+      "height": "100%",
+      "top": "2px",
+      "background-color": "#505a66",
+      "overflow-y": "auto",
+      "right": "0px !important"
+    },
+    ".baseCell": {
+      "width": "100%",
+      "top": "30px",
+      "bottom": "30px"
+    },
+    ".baseRow": {
+      "display": "table-row",
+      "width": "100%",
+      "margin-left": "-15px",
+      "margin-right": "-15px"
+    },
+    ".baseImage": {
+      "width": "100px",
+      "height": "100px"
+    },
+
+    ".baseText": {
+      "color": "#e5e5e5",
+      "float": "left"
+    },
+
+    ".baseHeader": {
+      "start-column": "1",
+      "span": "12",
+      "height": "90px",
+      "background-color": "#272c32",
+      "text-align": "center"
+    },
+
+    ".baseIcon": {
+      "float": "left",
+      "color": "#f2f2f2",
+      "line-height": "90px"
+    },
+
+    ".testMessageContainer": {
+      "start-column": "3",
+      "span": "10",
+      "background-color": "rgba(0,0,0,0)"
+    },
+
+    ".testMessageName": {
+      "color": "#e5e5e5",
+      "float": "left"
+    },
+
+    ".testMessageDate": {
+      "color": "#b3b3b3",
+      "float": "right",
+      "margin-right": "10px"
+    },
+
+    ".testMessageBody": {
+      "color": "#ffffff",
+      "width": "100%",
+      "float": "left",
+      "margin-top": "10px"
+    },
+
+    ".testAvatarContainer": {
+      "start-column": "1",
+      "span": "2",
+      "text-align": "center",
+      "background-color": "rgba(0,0,0,0)"
+    },
+
+    ".testHeaderTitle": {
+      "color": "#f2f2f2",
+      "line-height": "90px"
+    }
+  }
+}
