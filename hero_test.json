@@ -97,6 +97,45 @@
     }
   },
   "style": {
+    "$black": "rgb(0, 0, 0)",
+    "$white": "rgb(255, 255, 255)",
+    "$coal10": "rgb(20, 22, 26)",
+    "$coal20": "rgb(39, 44, 50)",
+    "$coal40": "rgb(80, 90, 102)",
+    "$coal70": "rgb(152, 164, 179)",
+    "$blue95": "rgb(0, 178, 243)",
+    "$red93": "rgb(237, 23, 79)",
+    "$green73": "rgb(74, 185, 98)",
+    "$pink94": "rgb(240, 57, 135)",
+    "$gold100": "rgb(255, 181, 21)",
+    "$grey10": "rgb(26, 26, 26)",
+    "$grey20": "rgb(51, 51, 51)",
+    "$grey30": "rgb(77, 77, 77)",
+    "$grey40": "rgb(102, 102, 102)",
+    "$grey50": "rgb(127, 127, 127)",
+    "$grey60": "rgb(153, 153, 153)",
+    "$grey70": "rgb(179, 179, 179)",
+    "$grey80": "rgb(204, 204, 204)",
+    "$grey90": "rgb(229, 229, 229)",
+    "$grey95": "rgb(242, 242, 242)",
+    "$c40": "rgba(80, 90, 102, .6)",
+    "$c20": "rgba(39, 44, 50, .9)",
+    "$w95": "rgba(255, 255, 255, .95)",
+    "$w70": "rgba(255, 255, 255, 0.7)",
+    "$w60": "rgba(255, 255, 255, 0.6)",
+    "$w40": "rgba(255, 255, 255, .4)",
+    "$w50": "rgba(255, 255, 255, .5)",
+    "$w20": "rgba(255, 255, 255, .2)",
+    "$w30": "rgba(255, 255, 255, .3)",
+    "$g70": "rgb(179, 179, 179)",
+    "$text": "rgb(255, 255, 255)",
+    "$blacktrans": " rgba(0, 0, 0, .6)",
+    "$channelOverlay": " rgba(0, 0, 0, .05)",
+    "$gold": " rgb(255, 215, 0)",
+    "$orange": " rgb(253,125, 9)",
+    "$purple": " rgb(195, 0, 175)",
+    "$eggplant": " rgb(111, 126, 190)",
+    "$teal": " rgb(32, 195, 222)",
     "body": {
       "background-color": "#000000",
       "font-size": "16",
@@ -288,21 +327,21 @@
       "right": "0px",
       "span": "12",
       "height": "100%",
-      "background-color": "#b3b3b3"
+      "background-color": "$grey70"
     },
     ".baseAvatar": {
       "width": "56px",
       "height": "56px",
       "border-radius": "28px",
       "border-width": "2px",
-      "border-color": "#ffffff",
+      "border-color": "$text",
       "border-style": "solid"
     },
     ".baseTable": {
       "width": "100%",
       "height": "100%",
       "top": "2px",
-      "background-color": "#505a66",
+      "background-color": "$coal40",
       "overflow-y": "auto",
       "right": "0px !important"
     },
@@ -323,21 +362,20 @@
     },
 
     ".baseText": {
-      "color": "#e5e5e5",
+      "color": "$grey90",
       "float": "left"
     },
 
     ".baseHeader": {
-      "start-column": "1",
-      "span": "12",
+      "width": "100%",
       "height": "90px",
-      "background-color": "#272c32",
+      "background-color": "$coal20",
       "text-align": "center"
     },
 
     ".baseIcon": {
       "float": "left",
-      "color": "#f2f2f2",
+      "color": "$grey95",
       "line-height": "90px"
     },
 
@@ -348,18 +386,18 @@
     },
 
     ".testMessageName": {
-      "color": "#e5e5e5",
+      "color": "$grey70",
       "float": "left"
     },
 
     ".testMessageDate": {
-      "color": "#b3b3b3",
+      "color": "$grey90",
       "float": "right",
       "margin-right": "10px"
     },
 
     ".testMessageBody": {
-      "color": "#ffffff",
+      "color": "$text",
       "width": "100%",
       "float": "left",
       "margin-top": "10px"
@@ -373,7 +411,7 @@
     },
 
     ".testHeaderTitle": {
-      "color": "#f2f2f2",
+      "color": "$grey95",
       "line-height": "90px"
     }
   }

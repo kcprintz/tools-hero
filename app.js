@@ -5,9 +5,10 @@ const Absurd = require('absurd');
 const JefNode = require('json-easy-filter').JefNode;
 const absurd = Absurd();
 const _ = require('lodash');
+const output_file = 'html_test/css/hero_style.css';
 
 
-fs.readFile('style.json', (err, data) => {
+fs.readFile('hero_test.json', (err, data) => {
     if (err) {
         throw err;
     }
@@ -15,6 +16,7 @@ fs.readFile('style.json', (err, data) => {
     const hierarchyTree = jsonTree.hierarchy;
     let depth = 0;
     let h_depth = 0;
+    let parent = "";
 
     // transform html hierarchy here.
     let div_array = [];
@@ -24,29 +26,33 @@ fs.readFile('style.json', (err, data) => {
 
     const res = new JefNode(hierarchyTree).filter((node) => {
 
-        if (node.has('type')) {
-            const t = node.value;
-            const n = node.key;
-            let base_class = n.replace("."," ");
-            base_class = base_class.replace("."," ");
-            console.log("node name = "+base_class);
-            if ((t.type == 'div') || (t.type == 'text')) {              // or we can test for 'icon' etc.
-                console.log(`div id - ${t.id}`);
-                console.log(`div style ${t.style_class}`);
-                console.log(`hierarchy depth ${depth}`);
-                if(open_depth != depth) {
-                    div_array.push(`<div id="${t.id}" class="${t.style_class}${base_class}">`);
-                    open_depth = depth;
-                }
-                // we know its a div here, and we know the hierarchy depth (depth) so we can do div within div
 
-                if (node.level > h_depth) {
-                    h_depth = node.level;
-                    depth++;
-                }
-                if (node.level < h_depth) {
-                    h_depth = node.level;
-                    depth--;
+        if(node.parent && node.parent.key==='subview') {
+            console.log("parent = subview and node name is "+node.key);
+        }else{
+            if (node.has('type')) {
+                const t = node.value;
+                const n = node.key;
+                let base_class = n.replace("."," ");
+                base_class = base_class.replace("."," ");
+                if ((t.type == 'div') || (t.type == 'text')) {              // or we can test for 'icon' etc.
+                    console.log(`div id - ${t.id}`);
+                    console.log(`div style ${t.style_class}`);
+                    console.log(`hierarchy depth ${depth}`);
+                    if(open_depth != depth) {
+                        div_array.push(`<div id="${t.id}" class="${t.style_class}${base_class}">`);
+                        open_depth = depth;
+                    }
+                    // we know its a div here, and we know the hierarchy depth (depth) so we can do div within div
+
+                    if (node.level > h_depth) {
+                        h_depth = node.level;
+                        depth++;
+                    }
+                    if (node.level < h_depth) {
+                        h_depth = node.level;
+                        depth--;
+                    }
                 }
             }
         }
@@ -121,7 +127,10 @@ fs.readFile('style.json', (err, data) => {
 
     absurd.add(styleTree).compile((err, css) => {
         // output the css to disk for web here
-        console.log(css);
+        fs.writeFile(output_file, css, function (err) {
+            if (err) throw err;
+            console.log('\nCSS Style written...');
+        });
     });
 
 });
