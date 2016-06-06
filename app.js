@@ -25,6 +25,8 @@ fs.readFile('hero_test.json', (err, data) => {
     let open_depth = -1;
     let variable_array = [];
 
+    let children = 0;
+
     const res = new JefNode(hierarchyTree).filter((node) => {
 
 
@@ -57,7 +59,7 @@ fs.readFile('hero_test.json', (err, data) => {
                         console.log(`divid -${t.id}`);
                         console.log(`divstyle${t.style_class}`);
                         console.log(`hierarchydepth${depth}`);
-
+                        div_array.push(`<div id="${t.id}" class="${t.style_class}${base_class}">`);
                         html_string += '<div id="' + t.id + '" class="' + t.style_class + base_class + '">';
                     }
                 }
@@ -110,22 +112,22 @@ fs.readFile('hero_test.json', (err, data) => {
         //    //    }
         //    //}
         //}
-    });
-    //let iter = 0;
-    //div_array.forEach(function (d) {
-    //    let output_string = " ".repeat(iter * 4) + d;
-    //    iter++;
-    //    console.log(output_string);
     //});
-    //iter--;
-    //for (let i = 0; i < div_array.length; i++) {
-    //    let output_string = " ".repeat(iter * 4) + '</div>'
-    //    html_string += " ".repeat(iter * 4) + '</div>';
-    //    iter--;
-    //    console.log(output_string);
-    //}
-    //
-    //console.log("html_string = "+html_string);
+    let iter = 0;
+    div_array.forEach(function (d) {
+        let output_string = " ".repeat(iter * 4) + d;
+        iter++;
+        console.log(output_string);
+    });
+    iter--;
+    for (let i = 0; i < div_array.length; i++) {
+        let output_string = " ".repeat(iter * 4) + '</div>'
+        html_string += " ".repeat(iter * 4) + '</div>';
+        iter--;
+        console.log(output_string);
+    }
+
+    console.log("html_string = "+html_string);
 
     const styleTree = jsonTree.style;
 
