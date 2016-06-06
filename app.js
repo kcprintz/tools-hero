@@ -17,6 +17,7 @@ fs.readFile('hero_test.json', (err, data) => {
     let depth = 0;
     let h_depth = 0;
     let parent = "";
+    let html_string = "";
 
     // transform html hierarchy here.
     let div_array = [];
@@ -27,48 +28,104 @@ fs.readFile('hero_test.json', (err, data) => {
     const res = new JefNode(hierarchyTree).filter((node) => {
 
 
-        if(node.parent && node.parent.key==='subview') {
-            console.log("parent = subview and node name is "+node.key);
-        }else{
-            if (node.has('type')) {
-                const t = node.value;
-                const n = node.key;
-                let base_class = n.replace("."," ");
-                base_class = base_class.replace("."," ");
-                if ((t.type == 'div') || (t.type == 'text')) {              // or we can test for 'icon' etc.
-                    console.log(`div id - ${t.id}`);
-                    console.log(`div style ${t.style_class}`);
-                    console.log(`hierarchy depth ${depth}`);
-                    if(open_depth != depth) {
-                        div_array.push(`<div id="${t.id}" class="${t.style_class}${base_class}">`);
-                        open_depth = depth;
-                    }
-                    // we know its a div here, and we know the hierarchy depth (depth) so we can do div within div
+            if(node.key==='subview'){
+                console.log("is subview number of children = " + node.count);
+                children = node.count;
+                return;
+            }
 
-                    if (node.level > h_depth) {
-                        h_depth = node.level;
-                        depth++;
+            if (node.has('type')) {
+                if (children > 0) {
+                    const t = node.value;
+                    const n = node.key;
+                    let base_class = n.replace(".", " ");
+                    base_class = base_class.replace(".", " ");
+                    if ((t.type == 'div') || (t.type == 'text')) {              // or we can test for 'icon' etc.
+                        console.log(`divid -${t.id}`);
+                        console.log(`divstyle${t.style_class}`);
+                        console.log(`hierarchydepth${depth}`);
+
+                        html_string += '<div id="' + t.id + '" class="' + t.style_class + base_class + '"></div>';
                     }
-                    if (node.level < h_depth) {
-                        h_depth = node.level;
-                        depth--;
+                    children--;
+                } else {
+                    const t = node.value;
+                    const n = node.key;
+                    let base_class = n.replace(".", " ");
+                    base_class = base_class.replace(".", " ");
+                    if ((t.type == 'div') || (t.type == 'text')) {              // or we can test for 'icon' etc.
+                        console.log(`divid -${t.id}`);
+                        console.log(`divstyle${t.style_class}`);
+                        console.log(`hierarchydepth${depth}`);
+
+                        html_string += '<div id="' + t.id + '" class="' + t.style_class + base_class + '">';
                     }
                 }
             }
-        }
+        });
+
+        //if(node.key==='subview') {
+        //    console.log("is subview number of children = "+node.count);
+        //
+        //    //console.log("parent = subview and node name is "+node.key);
+        //    //if (node.has('type')) {
+        //    //    const t = node.value;
+        //    //    const n = node.key;
+        //    //    let base_class = n.replace("."," ");
+        //    //    base_class = base_class.replace("."," ");
+        //    //    if ((t.type == 'div') || (t.type == 'text')) {              // or we can test for 'icon' etc.
+        //    //        console.log(`div id - ${t.id}`);
+        //    //        console.log(`div style ${t.style_class}`);
+        //    //        console.log(`hierarchy depth ${depth}`);
+        //    //
+        //    //        html_string += '<div id="'+t.id+'" class="'+t.style_class+base_class+'">';
+        //    //    }
+        //    //}
+        //}else{
+        //    //console.log("parent not subview and node name is "+node.key);
+        //    //if (node.has('type')) {
+        //    //    const t = node.value;
+        //    //    const n = node.key;
+        //    //    let base_class = n.replace("."," ");
+        //    //    base_class = base_class.replace("."," ");
+        //    //    if ((t.type == 'div') || (t.type == 'text')) {              // or we can test for 'icon' etc.
+        //    //        console.log(`div id - ${t.id}`);
+        //    //        console.log(`div style ${t.style_class}`);
+        //    //        console.log(`hierarchy depth ${depth}`);
+        //    //        if(open_depth != depth) {
+        //    //            div_array.push(`<div id="${t.id}" class="${t.style_class}${base_class}">`);
+        //    //            html_string += '<div id="'+t.id+'" class="'+t.style_class+base_class+'">';
+        //    //            open_depth = depth;
+        //    //        }
+        //    //        // we know its a div here, and we know the hierarchy depth (depth) so we can do div within div
+        //    //
+        //    //        if (node.level > h_depth) {
+        //    //            h_depth = node.level;
+        //    //            depth++;
+        //    //        }
+        //    //        if (node.level < h_depth) {
+        //    //            h_depth = node.level;
+        //    //            depth--;
+        //    //        }
+        //    //    }
+        //    //}
+        //}
     });
-    let iter = 0;
-    div_array.forEach(function (d) {
-        let output_string = " ".repeat(iter * 4) + d;
-        iter++;
-        console.log(output_string);
-    });
-    iter--;
-    for (let i = 0; i < div_array.length; i++) {
-        let output_string = " ".repeat(iter * 4) + '</div>'
-        iter--;
-        console.log(output_string);
-    }
+    //let iter = 0;
+    //div_array.forEach(function (d) {
+    //    let output_string = " ".repeat(iter * 4) + d;
+    //    iter++;
+    //    console.log(output_string);
+    //});
+    //iter--;
+    //for (let i = 0; i < div_array.length; i++) {
+    //    let output_string = " ".repeat(iter * 4) + '</div>'
+    //    html_string += " ".repeat(iter * 4) + '</div>';
+    //    iter--;
+    //    console.log(output_string);
+    //}
+    //
+    //console.log("html_string = "+html_string);
 
     const styleTree = jsonTree.style;
 

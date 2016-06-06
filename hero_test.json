@@ -5,12 +5,12 @@
         "style_class": "",
         "type": "div",
         "id": "container_test",
-        "subviews": [{
+        "subview": [{
           ".baseHeader": {
             "style_class": "",
             "type": "div",
             "id": "header_test",
-            "subviews": [{
+            "subview": [{
               ".baseIcon": {
                 "style_class": "",
                 "type": "icon",
