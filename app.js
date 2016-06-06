@@ -38,6 +38,7 @@ fs.readFile('hero_test.json', (err, data) => {
 
             if (node.has('type')) {
                 if (children > 0) {
+
                     const t = node.value;
                     const n = node.key;
                     let base_class = n.replace(".", " ");
@@ -48,6 +49,12 @@ fs.readFile('hero_test.json', (err, data) => {
                         console.log(`hierarchydepth${depth}`);
 
                         html_string += '<div id="' + t.id + '" class="' + t.style_class + base_class + '"></div>';
+                    } else if (t.type == 'img') {
+                        console.log(`divid -${t.id}`);
+                        console.log(`divstyle${t.style_class}`);
+                        console.log(`hierarchydepth${depth}`);
+
+                        html_string += '<img id="' + t.id + '" class="' + t.style_class + base_class + '" src="images/placeholder.png" />';
                     }
                     children--;
                 } else {
@@ -61,6 +68,12 @@ fs.readFile('hero_test.json', (err, data) => {
                         console.log(`hierarchydepth${depth}`);
                         div_array.push(`<div id="${t.id}" class="${t.style_class}${base_class}">`);
                         html_string += '<div id="' + t.id + '" class="' + t.style_class + base_class + '">';
+                    } else if (t.type == 'img') {
+                        console.log(`divid -${t.id}`);
+                        console.log(`divstyle${t.style_class}`);
+                        console.log(`hierarchydepth${depth}`);
+
+                        html_string += '<img id="' + t.id + '" class="' + t.style_class + base_class + '" src="images/placeholder.png" />';
                     }
                 }
             }
