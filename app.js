@@ -27,34 +27,65 @@ fs.readFile('hero_test.json', (err, data) => {
 
     let children = 0;
 
+    let current_level = 0;
+    let last_level = 0;
+
     const res = new JefNode(hierarchyTree).filter((node) => {
 
+            current_level = node.level;
+
+            if((current_level < last_level-1) && (current_level !=0) &&(!node.isLeaf)) {
+                html_string += "</div>";
+                last_level = current_level;
+            }
+
+            console.log("node key = "+node.key+" level is "+node.level);
+            console.log("is left "+node.isLeaf );
+            console.log("is circular "+node.isCircular);
 
             if(node.key==='subview'){
-                console.log("is subview number of children = " + node.count);
+                //console.log("is subview number of children = " + node.count);
                 children = node.count;
                 return;
             }
 
             if (node.has('type')) {
-                if (children > 0) {
+                if ((children > 0) && (!node.has('subview'))) {
 
                     const t = node.value;
                     const n = node.key;
                     let base_class = n.replace(".", " ");
                     base_class = base_class.replace(".", " ");
                     if ((t.type == 'div') || (t.type == 'text')) {              // or we can test for 'icon' etc.
-                        console.log(`divid -${t.id}`);
-                        console.log(`divstyle${t.style_class}`);
-                        console.log(`hierarchydepth${depth}`);
+                        //console.log(`divid -${t.id}`);
+                        //console.log(`divstyle${t.style_class}`);
+                        //console.log(`hierarchydepth${depth}`);
 
-                        html_string += '<div id="' + t.id + '" class="' + t.style_class + base_class + '"></div>';
+                        html_string += '<div id="' + t.id + '" class="' + t.style_class + base_class + '">';
+                        if(current_level > last_level){
+                            console.log("new level");
+                            if(current_level != 0) {
+                                html_string += "</div>";
+                            }
+                        }else{
+                            console.log("same level");
+                        }
+                        last_level = current_level;
                     } else if (t.type == 'img') {
-                        console.log(`divid -${t.id}`);
-                        console.log(`divstyle${t.style_class}`);
-                        console.log(`hierarchydepth${depth}`);
+                        //console.log(`divid -${t.id}`);
+                        //console.log(`divstyle${t.style_class}`);
+                        //console.log(`hierarchydepth${depth}`);
 
                         html_string += '<img id="' + t.id + '" class="' + t.style_class + base_class + '" src="images/placeholder.png" />';
+                        if(current_level > last_level){
+                            console.log("new level");
+                            if(current_level != 0) {
+                                html_string += "</div>";
+                            }
+                        }else{
+                            console.log("same level");
+                        }
+                        last_level = current_level;
                     }
                     children--;
                 } else {
@@ -63,21 +94,21 @@ fs.readFile('hero_test.json', (err, data) => {
                     let base_class = n.replace(".", " ");
                     base_class = base_class.replace(".", " ");
                     if ((t.type == 'div') || (t.type == 'text')) {              // or we can test for 'icon' etc.
-                        console.log(`divid -${t.id}`);
-                        console.log(`divstyle${t.style_class}`);
-                        console.log(`hierarchydepth${depth}`);
+                        //console.log(`divid -${t.id}`);
+                        //console.log(`divstyle${t.style_class}`);
+                        //console.log(`hierarchydepth${depth}`);
                         div_array.push(`<div id="${t.id}" class="${t.style_class}${base_class}">`);
                         html_string += '<div id="' + t.id + '" class="' + t.style_class + base_class + '">';
                     } else if (t.type == 'img') {
-                        console.log(`divid -${t.id}`);
-                        console.log(`divstyle${t.style_class}`);
-                        console.log(`hierarchydepth${depth}`);
+                        //console.log(`divid -${t.id}`);
+                        //console.log(`divstyle${t.style_class}`);
+                        //console.log(`hierarchydepth${depth}`);
 
                         html_string += '<img id="' + t.id + '" class="' + t.style_class + base_class + '" src="images/placeholder.png" />';
                     }
                 }
             }
-        });
+         });
 
         //if(node.key==='subview') {
         //    console.log("is subview number of children = "+node.count);
